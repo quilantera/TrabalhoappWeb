@@ -1,0 +1,84 @@
+    {%extends 'base.html'%}
+
+    {%block title%} {{super()}} - Cadastro{%endblock%}
+    {%block content%}
+    <section>
+        <div class="painel">
+            <h1>Cadastro</h1> 
+            <form class="formulario" action='http://127.0.0.1:5000/result' method="POST">  
+            <div>
+                <div class="campoForm">
+                    <p> Nome </p> 
+                <input type="text" name="nome" 
+                placeholder="Nome"
+                5 minlength="5"
+                6 maxlength="30"
+                class="boxTexto">
+                </div>
+                <div class="campoForm">
+                    <p> Sobrenome</p>
+                    <input type="text" name="sobrenome" 
+                    placeholder="Sobrenome"
+                    5 minlength="5"
+                    6 maxlength="30"
+                    class="boxTexto">
+                </div>
+            </div>
+            <div>
+                <div class="campoForm">
+                <p> Data de Nascimento</p>
+                <input type="date" name="nome" class="boxTexto">
+                </div>
+            </div>
+            <div> 
+                <div class="campoForm">
+                <p>Gênero</p>
+                <select name="genero" class="combobox" >
+                    <option>Selecione uma opção</option>
+                    <option>Masculino</option>
+                    <option>Feminino</option>
+                    <option>Outro</option>
+                    <option>prefiro não dizer</option>
+                    </select>
+                </div>      
+            </div>
+            <div>
+                <div class="campoForm">
+                    <p>País</p>
+                    <input type="text" name="pais" 
+                    placeholder="Insira o país"
+                    minlength="5"
+                    maxlength="30"
+                    class="boxTexto">
+                </div>
+                <div class="campoForm">
+                    <p>Estado</p>
+                    <input type="text" name="estado" 
+                    placeholder="Insira o Estado"
+                    minlength="5"
+                    maxlength="30"
+                    class="boxTexto">
+                </div>
+            </div>
+            <div id="formenviar">
+                <input type="submit" value="submit" id="enviar">               
+            </div>    
+            </form>
+            <div class="redes">
+                <p> Ou, cadastre-se com as Redes Sociais</p>
+                <div id="face"> 
+                    <i class="fab fa-facebook-f"></i>
+                    <a href="#">Conecte com o Facebook</a>
+                </div>
+                <div id="gmail"> 
+                    <i class="fab fa-google"></i>
+                    <a href="#">Conecte com o Gmail</a>
+                </div>
+                <div id="twitter"> 
+                    <i class="fab fa-twitter"></i>
+                    <a href="#">Conecte com o Twitter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}

@@ -1,0 +1,39 @@
+{%extends 'base.html'%}
+
+{%block title%} {{super()}} - Produtos{%endblock%}
+{%block content%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/produtos.css')}}">
+<div class="products_section">
+    <div class="nav-itens">
+        <ul>
+            
+            <li>
+                <button class="btn-active" id="btn1">
+                <p>Todos</p>
+            </button>
+            </li>
+        
+           <li>
+            <button class="btn-active" id="btn2">
+               <p>Jordan</p>
+            </button>
+           </li>
+            <li >
+                <button class="btn-active" id="btn2">
+                <p>Yeezy</p>
+                </button>
+            </li>
+            <li>
+                <button class="btn-active" id="btn2">
+                <p>Air Max</p>
+                </button>
+            </li>
+        </ul>
+    </div>
+    <div id="section-itens">
+    </div>
+
+</div>
+
+<script src="{{url_for('static',filename='js/produtos.js')}}"></script>
+{%endblock%}

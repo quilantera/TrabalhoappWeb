@@ -19,15 +19,24 @@ class User(db.Model):
 
 
 class Product(db.Model):
-    __tablename__ ="produtos"
+    __tablename__ ="products"
     id = db.Column(db.Integer,primary_key=True)
     name= db.Column(db.String)
-    preco= db.Column(db.Float)
+    price= db.Column(db.Float)
 
-    def __init__(self,id,name,preco):
+    def __init__(self,id,name,price):
         self.id=id
         self.name=name
-        self.preco=preco 
+        self.price=price
 
     def __repr__(self):
         return "< Product %r>" % self.name 
+
+class Shops(db.Model):
+    __tablename__="shops"
+    id = db.Column(db.Integer,primary_key=True)
+    id_user = db.Column(db.Integer, db.ForeingKey('users.id'))
+    id_product = db.Column(db.Integer, db.ForeingKey('products.id'))
+    
+    user=db.relationship('User',foreign_keys= id_user)
+    shoper=db.relationship('User',foreign_keys=id_product)

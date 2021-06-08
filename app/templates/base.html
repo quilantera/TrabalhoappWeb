@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <title>{% block title %}QGAGames{% endblock %} </title>
+</head>
+<body>
+    <header class="menu-bar">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn"> 
+            <i class="fas fa-bars"></i>
+        </label>
+        <div class ="menu-logo">
+        <a href="pagamento">
+            <img src="/static/images/logo.png">
+        </a>
+        </div>
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" class="search" placeholder="ex: Jordan 1 Chicago">
+        </div>
+        <div class="menu-itens">
+            <ul>
+                <li>
+                    <a href="index">Home</a>
+                </li>
+                <li>
+                    <a href="produtos">compra</a>
+                </li>
+                <li>
+                    <a href="cadastro">login</a>
+                </li>
+                <li>
+                <a href="#"><div class="btn-cadastrar"><p>cadastre-se</p></div></a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <section class="content">
+        {%block  content %}
+        {% endblock %}
+    </section>
+    
+    
+    
+    <footer>
+        <div class ="wrapper">
+            <div class ="footer_box">
+                <div class ="company">
+                    <div class="cImage"> 
+                        <img class="logo_footer"src="/static/images/logo.png">
+                    </div>
+                   
+                    
+                </div>
+            </div>
+            <div class ="footer_box">
+                <div class = "footer_contact">
+                    <h1>Siga-nos nas redes sociais</h1>
+                    <a href="#">
+                        <div class="contact_container">
+                        <i class="fab fa-whatsapp"></i><p>Whatsapp</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                    <div class="contact_container">
+                        <i class="fab fa-facebook-f"></i><p>Facebook</p>
+                    </div>
+                    </a>
+                    <a href="#">
+                    <div class="contact_container">
+                        <i class="fab fa-instagram"></i><p>Instagram</p>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class ="footer_box">
+                <div class = "footer_payment">
+                    <h1>Nossas formas de pagamento</h1>
+                    <div class="cImage">
+                        <img src="/static/images/pix.png" class="img_payment">
+                        <img src="/static/images/mercado-pago-logo.png" class="img_payment">
+                        <img src="/static/images/bandeiraCartao.jpg" class="img_payment">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

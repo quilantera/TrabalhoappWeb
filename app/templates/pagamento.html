@@ -1,0 +1,112 @@
+{%extends 'base.html'%}
+{%block title%}{{super()}}- pagamento{%endblock%}
+{%block content%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pagamento.css')}}">
+   <div class="title-shipping"><h1>Area de Compra</h1><img src="/static/images/sacola.png"></div> 
+<div class="section-product">
+    
+    <div class="section-info">
+        <h1>informações de envio</h1>
+        <div class="area-shipping">
+            <div class="ship-container">
+                <span class="txt-area">Endereço: </span>
+                <span id="txt-address"> não consta</span>
+            </div>
+            <div class="ship-container">
+                <span class="txt-area">Complemento: </span>
+                <span id="txt-complement"> não consta</span>
+            </div>
+            <div class="ship-container">
+                <span class="txt-area">CEP: </span>
+                <span id="txt-cep"> 0000-0000</span>
+            </div>
+            <div class="ship-container">
+                    <span class="txt-area">Cidade: </span>
+                    <span id="txt-city"> não consta</span>
+            </div>
+        </div>
+            <button class="btn-addAddress">
+                <p> adicionar novo endereço</p>
+            </button>
+    </div>
+    <div class="section-info">
+        <h1>Informacoes de pagamento</h1>
+        
+                <h2>Escolha o método de pagamento</h2>
+                <div class="area-payment">
+                <input type="checkbox" id="checkCartao">
+                <input type="checkbox" id="checkMercadoPago">
+                <input type="checkbox" id="checkPix">
+                <label for="checkCartao" class="check_payment"> 
+                    <img src="/static/images/bandeiraCartao.jpg" class="img_payment">
+                    
+                </label>
+                <label for="checkMercadoPago" class="check_payment"> 
+                    <img src="/static/images/mercado-pago-logo.png" class="img_payment">
+                </label>
+                <label for="checkPix" class="check_payment"> 
+                    <img src="/static/images/pix.png" class="img_payment">
+                </label>
+        </div>
+    </div>
+    <div class="section-info">
+        <h1>Lista de produtos</h1>
+    </div>
+</div>
+<div class="section-payment">
+    <div class="section-info">
+        <h1>pagamento</h1>
+        <div class="ship-container">
+            <span class="txt-area">Sub-total: </span>
+            <span id="txt-subTotal">R$ 0,00</span>
+        </div>
+        <div class="ship-container">
+            
+            <ul class ="frete">
+                <span class="txt-frete"> Escolha o seu Frete</span>
+                <li>
+                    <input type="checkbox" class="checkFrete"> 
+                    <p>SEDEX - 1 a 3 dias uteis</p>
+                </li>
+                <li>
+                    <input type="checkbox" class="checkFrete"> 
+                    <p>Ninja - 5 a 6 dias uteis</p>
+                </li>
+                <li>
+                    <input type="checkbox" class="checkFrete"> 
+                    <p>Expresso - 1 a 8 dias uteis</p>
+                </li>
+            </ul>
+            
+        </div>
+        <div class="ship-container">
+            <span class="txt-area">Total: </span>
+            <span class="txt-area">R$ 0,00</span>
+        </div>
+        <button class="btn-paynow">
+            <p> Comprar agora</p>
+        </button>
+    </div>
+</div>
+
+<div id="modal-address" class="modal-container">
+    <div class="modal">
+        <h2> Informações do endereço</h2>
+        <button class="close">X</button>
+        <form>
+            <div>
+            <input type="text" class="input-address" id="address" placeholder="Endereço">
+            <input type="text" class="input-address" id="complement" placeholder="complemento">
+            </div>
+            <div>
+           <input type="text" class="input-address"  id="CEP" placeholder="CEP">
+            <input type="text" class="input-address" id="city" placeholder="cidade">
+            </div>
+            <div>
+            <input type="button" class="btn-send" value="enviar">
+            </div>
+        </form>
+    </div>
+</div>
+<script src="{{url_for('static',filename='js/pagamento.js')}}"></script>
+{%endblock%}

@@ -1,116 +1,16 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename="css/style.css")}}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <title>Document</title>
-</head>
-<body>
-    <header class="menu-bar">
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn"> 
-            <i class="fas fa-bars"></i>
-        </label>
-        <div class ="menu-logo">
-        <a href="#">
-            <img src="/static/images/logo.jpg">
-        </a>
-        </div>
-        <div class="menu-itens">
-            <ul>
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">Vendas</a>
-                </li>
-                <li>
-                <a href="#"><div class="btn-cadastrar"><p>cadastre-se</p></div></a>
-                </li>
-            </ul>
-        </div>
-    </header>
-    <section>
-        <div class="painel">
-            <h1>Cadastro</h1> 
-            <form class="formulario" >  
-            <div>
-                <div class="campoForm">
-                    <p> Nome </p> 
-                <input type="text" name="nome" 
-                placeholder="Nome"
-                5 minlength="5"
-                6 maxlength="30"
-                class="boxTexto">
-                </div>
-                <div class="campoForm">
-                    <p> Sobrenome</p>
-                    <input type="text" name="sobrenome" 
-                    placeholder="Sobrenome"
-                    5 minlength="5"
-                    6 maxlength="30"
-                    class="boxTexto">
-                </div>
-            </div>
-            <div>
-                <div class="campoForm">
-                <p> Data de Nascimento</p>
-                <input type="date" name="nome" class="boxTexto">
-                </div>
-            </div>
-            <div> 
-                <div class="campoForm">
-                <p>Gênero</p>
-                <select name="genero" class="combobox" >
-                    <option>Selecione uma opção</option>
-                    <option>Masculino</option>
-                    <option>Feminino</option>
-                    <option>Outro</option>
-                    <option>prefiro não dizer</option>
-                    </select>
-                </div>      
-            </div>
-            <div>
-                <div class="campoForm">
-                    <p>País</p>
-                    <input type="text" name="pais" 
-                    placeholder="Insira o país"
-                    minlength="5"
-                    maxlength="30"
-                    class="boxTexto">
-                </div>
-                <div class="campoForm">
-                    <p>Estado</p>
-                    <input type="text" name="estado" 
-                    placeholder="Insira o Estado"
-                    minlength="5"
-                    maxlength="30"
-                    class="boxTexto">
-                </div>
-            </div>
-            <div id="formenviar">
-                <input type="submit" value="submit" id="enviar">               
-            </div>    
-            </form>
-            <div class="redes">
-                <p> Ou, cadastre-se com as Redes Sociais</p>
-                <div id="face"> 
-                    <i class="fab fa-facebook-f"></i>
-                    <a href="#">Conecte com o Facebook</a>
-                </div>
-                <div id="gmail"> 
-                    <i class="fab fa-google"></i>
-                    <a href="#">Conecte com o Gmail</a>
-                </div>
-                <div id="twitter"> 
-                    <i class="fab fa-twitter"></i>
-                    <a href="#">Conecte com o Twitter</a>
-                </div>
-            </div>
-        </div>
-    </section>
-</body>
-</html>
+{%extends 'base.html'%}
+{%block  content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
+<div class="initial-banner">
+  <div class ="title-content">
+  <p class="txt-title">Hyped Content - Doc Shoes</p> 
+  <p class="txt-subtitle">For SneakerHeads</p>
+</div> 
+  <a href="/produtos"> 
+    <div class="btn-shop">
+      <p> conheça nossos produtos</p>
+    </div>
+  </a>
+</div>
+
+{% endblock %}
