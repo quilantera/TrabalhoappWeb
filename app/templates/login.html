@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+
+{%block title%} {{super()}} - Login{%endblock%}
+{%block content%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css')}}">
+<div class="div-login">
+    <h1> LOGIN </h1>
+    <form action="" class="form-login">
+        <div class="space-input">
+            <i class="fas fa-user"></i>
+            <input type="text" class="input-text" name=" user" placeholder="Usuário" >
+        </div>
+      <div class ="space-input">
+        <i class="fas fa-lock"></i>
+        <input type="password" class="input-text" name="password" placeholder="Senha" >
+      </div>
+        
+            <input type="submit" class="input-submit" name="submit" value="login"> 
+    </form>
+</div>
+
+{%endblock%}
