@@ -27,10 +27,13 @@
     font-size: 20pt;
     color: beige;
  }
+ .btn-shop ::before{
+   transition: all 0.3s ease-in-out;
+ }
  .btn-shop{
     position: absolute;
-   
-    
+      transition: all 0.5s ease-in-out;
+     color: beige;
      display: flex;
      justify-content: center;
      align-items: center;

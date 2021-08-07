@@ -1,17 +1,18 @@
+import sqlalchemy
 from flask import Flask
-from flask import jsonify
-from app.db import db
-from app.ma import ma
-from marshmallow import ValidationError
+from flask_sqlalchemy import SQLAlchemy
+from flask_script import Manager
+from flask_migrate import Migrate
+
 app = Flask(__name__)
+app.secret_key = "super secret key"
+db= SQLAlchemy(app)
+app.config.from_object('config')
+migrate = Migrate(app, db)
 
-app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///storage.db'
-app.config['PROPAGATE_EXCEPTIONS'] = True
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-@app.before_first_request
-def create_tables():
-    db.create_all()
+manager = Manager(app)
 
+from app.models import tables
 from app.controllers import default
 
 

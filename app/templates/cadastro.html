@@ -5,16 +5,16 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css')}}">
     <div class="div-login">
         <h1> CADASTRO</h1>
-        <form action="" class="form-login">
+        <form action="" method="POST" class="form-login">
             <div class="space-input">
                 <i class="fas fa-user"></i>
-                <input type="text" class="input-text" name=" user" placeholder="Usuário" >
+                <input type="text" class="input-text" name="user" placeholder="Usuário" >
             </div>
           <div class ="space-input">
             <i class="fas fa-lock"></i>
             <input type="password" class="input-text" name="password" placeholder="Senha" >
           </div>
-          <div class ="space-input">
+         <div class ="space-input">
             <i class="fas fa-unlock"></i>
             <input type="password" class="input-text" name="confirm-password" placeholder="confirmar Senha" >
           </div>
@@ -24,6 +24,7 @@
           </div>
             
                 <input type="submit" class="input-submit" name="submit" value="cadastro"> 
+                
         </form>
     </div>
     

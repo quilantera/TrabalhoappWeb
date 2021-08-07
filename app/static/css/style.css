@@ -20,7 +20,7 @@ body{
     align-items: center;
     justify-content: space-between;
     min-height: 40px;
-    background-color: whitesmoke;
+    background-color: rgb(245, 245, 245);
     border-width: .5px;
     border-color:#58647e;
     
@@ -30,7 +30,7 @@ body{
     display: flex;
     border-radius: 3px;
     align-items: center;
-    background-color:#dad8d8;
+    background-color:rgb(216, 215, 215);
     padding-right: 1rem;
     box-shadow: none;
     height: 34px;
@@ -39,7 +39,11 @@ body{
     text-overflow: ellipsis;
     
 }
-.search-bar i{
+.search-bar button{
+    border-style: none;
+    background:none;
+}
+.search-bar button i{
     color:#0f0f0f;
     padding-left:10px;
     padding-right: 7px;
@@ -75,7 +79,7 @@ body{
 .menu-logo a{
     height: 70px;
 }
-.menu-itens{
+.menu-itens ul{
     float: right;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 12pt;
@@ -83,9 +87,10 @@ body{
     justify-content: center;
     text-decoration: none;
     padding-right: 100px;
+    display: flex;
 }
 
-.menu-itens ul li a{
+.menu-itens ul a, .myUser{
 text-decoration: none;
 color:#1a202c;
 font-size: 15pt;
@@ -95,13 +100,42 @@ border-radius: 4px;
     line-height: 80px;
     
 }
-.menu-itens ul li{
+.user{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    
+    width: 90px;
+    margin-top:10px;
+    font-size:14pt;
+}
+.myUser{
+    font-weight: 500;
+  
+    padding: 0;
+    margin : 0;
+    line-height: 0px;
+    font-size: 10pt;
+    width: 70px;
+    line-height: 10pt;
+    overflow-wrap: break-word;
+   transition:all 0.5s ;
+}
+.menu-select{
     display:inline-block;
-    padding:0px 15px 0px 15px;
-    transition: all 2s;
+    padding:0px 25px 0px 15px;
+    transition: all 0.3s;
    
 }
-.menu-itens ul li a:hover{
+.menu-itens ul li i{
+    margin-top:10px;
+    height: 30px;
+    width: 50px;
+    color:#1a202c;
+    transition: all 0.3s;
+}
+
+.menu-itens ul li a:hover,.user:hover,.myUser:hover,.menu-itens ul li i:hover{
     color:teal;
  
 }
@@ -174,21 +208,12 @@ border-radius: 4px;
     box-shadow: 5px 5px 15px rgba(68, 68, 68, 0.2);
     background:rgb(248, 248, 248);
 }
-.formulario{
-
-    display:grid;
-    justify-content: center;
-    flex-direction: column;
-    margin:5px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-}
 
  /* footer */
 
 footer {
     background-color: #0f0f0f;
-    margin-top: 10px;
+   
     padding-top: 3em;
     padding-bottom: 10px;       
     width: 100%;

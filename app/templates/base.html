@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="shortcurt icon" href="/static/images/logo2.png">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <title>{% block title %}DocShoes{% endblock %} </title>
+    <title>{% block title %}DocShoes{% endblock %}  </title>
 </head>
 <body>
     <header class="menu-bar">
@@ -16,27 +17,55 @@
         </label>
         <div class ="menu-logo">
         <a href="pagamento">
-            <img src="/static/images/logo.png">
+            <img src="/static/images/logo2.png">
         </a>
         </div>
-        <div class="search-bar">
-            <i class="fas fa-search"></i>
-            <input type="text" class="search" placeholder="ex: Jordan 1 Chicago">
-        </div>
+        <form class="search-bar">
+            <button type="submit" ><i class="fas fa-search"></i></button>
+            <input type="text" class="search" placeholder="ex: Jordan 1 Chicago" name="search">
+        </form>
         <div class="menu-itens">
             <ul>
                 <li>
-                    <a href="index">Home</a>
+                    <a class="menu-select" href="index">Home</a>
                 </li>
                 <li>
-                    <a href="produtos">compra</a>
+                    <a class="menu-select" href="produtos">compra</a>
+                </li>
+                {%if username !=""%}
+                <li>
+                    <a href="/logout">
+                    <div class="user">
+                        <i class="far fa-user fa-lg"></i>
+                        <p class="myUser">{{username}}</p>
+                    </div>
+                    </a>
                 </li>
                 <li>
-                    <a href="login">login</a>
+                    <a class="menu-select" href="pagamento"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                </li>
+                <style>
+                   
+                    .menu-select i{
+                        padding-right: 0px;
+                        
+                        color:#575755
+                    }
+                    .user i{
+                        padding:0;
+                        margin:0;
+                        height: 30px;
+                    }
+
+                </style>
+                {%else%}
+                <li>
+                    <a class="menu-select" href="login">login</a>
                 </li>
                 <li>
                 <a href="cadastro"><div class="btn-cadastrar"><p>cadastre-se</p></div></a>
                 </li>
+                {%endif%}
             </ul>
         </div>
     </header>
@@ -54,8 +83,6 @@
                     <div class="cImage"> 
                         <img class="logo_footer"src="/static/images/logo.png">
                     </div>
-                   
-                    
                 </div>
             </div>
             <div class ="footer_box">
